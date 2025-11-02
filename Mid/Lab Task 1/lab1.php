@@ -6,7 +6,7 @@
 </head>
 <body>
     <center> 
-        <h1> Clinic Patient Registration </h1>
+        <<h2 style = "color : Blue">Clinic Patient Registration</h2>
 
 <table>
     <td> 
@@ -27,13 +27,13 @@
 
         </select> <br>
         Insurance Policy Number: <br>
-         <input type="text"> <br>
+         <input type="number"> <br>
 
 
     </td>
 </table>
     
-        <h2> Additional Information </h2>
+        <h2 style = "color : Blue">Additional Information</h2>
  <table>   
     <td>
         Username: <br>
@@ -42,6 +42,7 @@
         <input type="text"> <br>
         Confirm Password: <br>
         <input type="text"> <br>
+        <button type="submit" style="background-color: blue;">Register</button>
     </td>
     
 </table>
