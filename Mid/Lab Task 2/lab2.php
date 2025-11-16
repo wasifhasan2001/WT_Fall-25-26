@@ -38,7 +38,7 @@
         }
 
         function validateActivity() {
-            let activity = document.getElementById("activityName").value.trim();
+            var activity = document.getElementById("activityName").value.trim();
 
             if (activity === "") {
                 alert("Activity name cannot be empty!");
