@@ -3,10 +3,10 @@ require('../../../shared/db.php');
 
 header('Content-Type: application/json');
 
-/* Initialize response */
+
 $response = ["status" => "error", "message" => "Invalid request"];
 
-/* Validate POST data */
+
 if (!isset($_POST['data'])) {
     echo json_encode($response);
     exit();
@@ -19,7 +19,7 @@ $email    = trim($data['email'] ?? '');
 $password = $data['password'] ?? '';
 $confirm  = $data['confirmPassword'] ?? '';
 
-/* Server-side validation */
+
 $errors = [];
 
 if ($username === '') {
@@ -54,7 +54,7 @@ if (count($errors) > 0) {
     exit();
 }
 
-/* Check duplicate username */
+
 $stmt = mysqli_prepare($conn, "SELECT id FROM users WHERE username = ? LIMIT 1");
 mysqli_stmt_bind_param($stmt, "s", $username);
 mysqli_stmt_execute($stmt);
@@ -70,7 +70,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
 }
 mysqli_stmt_close($stmt);
 
-/* Check duplicate email */
+
 $stmt = mysqli_prepare($conn, "SELECT id FROM users WHERE email = ? LIMIT 1");
 mysqli_stmt_bind_param($stmt, "s", $email);
 mysqli_stmt_execute($stmt);
@@ -86,7 +86,7 @@ if (mysqli_stmt_num_rows($stmt) > 0) {
 }
 mysqli_stmt_close($stmt);
 
-/* Insert new user */
+
 $hash = password_hash($password, PASSWORD_DEFAULT);
 
 $stmt = mysqli_prepare(
