@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header styles */
+
 .navbar {
     background: rgba(11, 12, 16, 0.95);
     padding: 15px 40px;
@@ -41,14 +41,14 @@ body {
     color: #66fcf1;
 }
 
-/* Page container */
+
 .container {
     max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Product card */
+
 .details-card {
     background: #1f2833;
     border-radius: 8px;
@@ -59,7 +59,7 @@ body {
     border: 1px solid #2d3844;
 }
 
-/* Media section */
+
 .image-section {
     background: #000;
     display: flex;
@@ -74,7 +74,7 @@ body {
     opacity: 0.9;
 }
 
-/* Information section */
+
 .info-section {
     padding: 40px;
 }
@@ -96,7 +96,7 @@ body {
     line-height: 1.1;
 }
 
-/* Status labels */
+
 .in-stock {
     color: #1cc88a;
     font-weight: bold;
@@ -115,13 +115,13 @@ body {
     margin: 30px 0;
 }
 
-/* Interaction container */
+
 .action-area {
     display: flex;
     gap: 20px;
 }
 
-/* Purchase options */
+
 .option-box {
     flex: 1;
     background: #0b0c10;
@@ -158,7 +158,7 @@ body {
     color: #888;
 }
 
-/* Button UI */
+
 .btn-action {
     display: block;
     padding: 12px;

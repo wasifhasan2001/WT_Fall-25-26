@@ -62,14 +62,14 @@ $msg = $_GET['msg'] ?? '';
         <h3>每 Add New Game</h3>
         <form action="../php/add_game.php" method="POST" enctype="multipart/form-data">
             <div class="form-row">
-                <input type="text" name="name" placeholder="Game Title" required>
-                <input type="text" name="category" placeholder="Category (e.g. Action)" required>
-                <input type="number" name="stock_qty" placeholder="Stock Qty" required>
+                <input type="text" name="name" placeholder="Game Title">
+                <input type="text" name="category" placeholder="Category (e.g. Action)">
+                <input type="number" name="stock_qty" placeholder="Stock Qty">
             </div>
             
             <div class="form-row">
-                <input type="number" step="0.01" name="sell_price" placeholder="Sell Price ($)" required>
-                <input type="number" step="0.01" name="rent_price" placeholder="Rent Price ($/month)" required>
+                <input type="number" step="0.01" name="sell_price" placeholder="Sell Price ($)">
+                <input type="number" step="0.01" name="rent_price" placeholder="Rent Price ($/month)">
                 <select name="status">
                     <option value="sell">Sell Only</option>
                     <option value="rent">Rent Only</option>
