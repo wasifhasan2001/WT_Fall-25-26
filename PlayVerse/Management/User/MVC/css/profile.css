@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header navigation */
+
 .navbar {
     background: rgba(11, 12, 16, 0.95);
     padding: 15px 40px;
@@ -44,14 +44,14 @@ body {
     padding: 0 20px;
 }
 
-/* Main profile layout */
+
 .profile-grid {
     display: grid;
     grid-template-columns: 350px 1fr;
     gap: 30px;
 }
 
-/* Sidebar card */
+
 .profile-card {
     background: #1f2833;
     padding: 30px;
@@ -98,7 +98,7 @@ body {
     margin: 20px 0;
 }
 
-/* Summary data */
+
 .stat-row {
     display: flex;
     justify-content: space-between;
@@ -113,7 +113,7 @@ body {
     font-size: 18px;
 }
 
-/* Content blocks */
+
 .setting-box {
     background: #1f2833;
     padding: 25px;
@@ -130,7 +130,7 @@ body {
     padding-bottom: 10px;
 }
 
-/* User inputs */
+
 label {
     display: block;
     margin: 15px 0 5px;
@@ -152,7 +152,7 @@ input:focus {
     border-color: #66fcf1;
 }
 
-/* Call to action */
+
 .btn-save {
     margin-top: 20px;
     padding: 10px 20px;
@@ -168,7 +168,7 @@ input:focus {
     background: #fff;
 }
 
-/* High-risk actions */
+
 .btn-warn {
     background: #f6c23e;
 }
@@ -197,7 +197,7 @@ input:focus {
     min-height: 20px;
 }
 
-/* Form helpers */
+
 .show-pass-wrapper {
     margin: 10px 0 20px 0;
     display: flex;
@@ -211,7 +211,7 @@ input:focus {
     width: auto;
 }
 
-/* Modal backdrop */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -233,7 +233,7 @@ input:focus {
     opacity: 1;
 }
 
-/* Modal window */
+
 .modal-box {
     background: #1f2833;
     border: 1px solid #45a29e;
@@ -293,7 +293,7 @@ input:focus {
     filter: brightness(1.2);
 }
 
-/* Achievement display */
+
 .badge-grid {
     display: flex;
     justify-content: center;
