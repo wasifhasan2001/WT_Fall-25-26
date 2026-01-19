@@ -2,13 +2,11 @@
 require_once('../../../shared/auth_guard.php');
 protect_page('admin'); 
 
-/* Admin page security */
 require_once('../db/dashboardModel.php');
 require_once('../db/gameModel.php');
 
 if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
-/* Load dashboard data */
 $stats = getAdminStats();
 $allGames = getAllGames();
 
@@ -139,7 +137,6 @@ $msg = $_GET['msg'] ?? '';
 </div>
 
 <script>
-    /* Handle status notifications */
     const msg = "<?php echo isset($msg) ? htmlspecialchars($msg) : ''; ?>";
     if (msg !== "") {
         document.getElementById('popupMsg').innerText = msg;
