@@ -13,7 +13,7 @@ body {
     align-items: center;
 }
 
-/* Container box */
+
 .checkout-container {
     width: 100%;
     max-width: 800px;
@@ -24,7 +24,7 @@ body {
     box-shadow: 0 0 30px rgba(102, 252, 241, 0.15);
 }
 
-/* Header border */
+
 .terminal-header {
     border-bottom: 1px solid #45a29e;
     margin-bottom: 25px;
@@ -37,13 +37,13 @@ body {
     letter-spacing: 2px;
 }
 
-/* Grid layout */
+
 .content-grid {
     display: flex;
     gap: 30px;
 }
 
-/* Order summary */
+
 .summary-box {
     flex: 1;
     background: #0b0c10;
@@ -75,7 +75,7 @@ body {
     margin-top: 10px;
 }
 
-/* Form section */
+
 .payment-form {
     flex: 2;
 }
@@ -89,7 +89,7 @@ label {
     letter-spacing: 1px;
 }
 
-/* Terminal inputs */
+
 input {
     width: 100%;
     background: #0b0c10;
@@ -116,7 +116,7 @@ input:focus {
     flex: 1;
 }
 
-/* Payment button */
+
 .btn-pay {
     width: 100%;
     padding: 15px;
@@ -140,7 +140,7 @@ input:focus {
     cursor: not-allowed;
 }
 
-/* Exit link */
+
 .btn-cancel {
     display: block;
     text-align: center;
@@ -163,7 +163,7 @@ input:focus {
     min-height: 20px;
 }
 
-/* Modal backdrop */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -185,7 +185,7 @@ input:focus {
     opacity: 1;
 }
 
-/* Modal window */
+
 .modal-box {
     background: #1f2833;
     border: 2px solid #66fcf1;
@@ -227,7 +227,7 @@ input:focus {
     justify-content: center;
 }
 
-/* Modal buttons */
+
 .btn-modal {
     padding: 10px 20px;
     border: none;
