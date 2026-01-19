@@ -3,14 +3,14 @@ const passEl = document.getElementById("password");
 const errUser = document.getElementById("errUser");
 const errPass = document.getElementById("errPass");
 
-/* Show validation error */
+
 function showError(el, errEl, msg) {
     errEl.innerText = msg;
     errEl.style.display = "block";
     el.classList.add("input-error");
 }
 
-/* Clear all errors */
+
 function clearErrors() {
     errUser.style.display = "none";
     errPass.style.display = "none";
@@ -18,7 +18,7 @@ function clearErrors() {
     passEl.classList.remove("input-error");
 }
 
-/* Handle login submission */
+
 document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
     clearErrors();
@@ -41,7 +41,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
                 if (res.errors.password) showError(passEl, errPass, res.errors.password);
             } 
             else if (res.status === "success") {
-                /* Redirect based role */
+               
                 if (res.role === "admin") {
                     window.location.href = "../../../Admin/MVC/html/admin_dashboard.php";
                 } else {
