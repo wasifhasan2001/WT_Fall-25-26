@@ -15,7 +15,6 @@ body {
     color: var(--text-dark);
 }
 
-/* Global header */
 .topbar {
     background: #ffffff;
     padding: 15px 30px;
@@ -36,14 +35,14 @@ body {
     color: var(--primary-blue);
 }
 
-/* Page wrapper */
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px 40px;
 }
 
-/* Metrics grid */
+
 .kpi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -51,7 +50,7 @@ body {
     margin-bottom: 35px;
 }
 
-/* Metric card */
+
 .kpi-card {
     padding: 25px 20px;
     border-radius: 12px;
@@ -79,7 +78,7 @@ body {
     font-weight: 800;
 }
 
-/* Background variations */
+
 .bg-blue {
     background: linear-gradient(135deg, #4e73df, #224abe);
 }
@@ -104,7 +103,6 @@ body {
     background: linear-gradient(135deg, #36b9cc, #258391);
 }
 
-/* Card container */
 .card-section {
     background: white;
     padding: 25px;
@@ -121,7 +119,6 @@ h3 {
     margin-bottom: 20px;
 }
 
-/* Input rows */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -163,7 +160,6 @@ input:focus {
     border-color: var(--primary-blue);
 }
 
-/* Action buttons */
 .btn {
     padding: 10px 20px;
     border: none;
@@ -188,7 +184,6 @@ input:focus {
     font-size: 12px;
 }
 
-/* Data display */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -211,7 +206,6 @@ tr:hover {
     background: #fafafa;
 }
 
-/* Utilities */
 .text-highlight {
     color: var(--primary-blue);
 }
@@ -242,7 +236,6 @@ tr:hover {
     color: var(--danger-red);
 }
 
-/* Modal backdrop */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -259,7 +252,6 @@ tr:hover {
     transition: all 0.3s ease;
 }
 
-/* Modal inner */
 .popup-content {
     background: white;
     padding: 30px 40px;
@@ -272,7 +264,6 @@ tr:hover {
     width: 90%;
 }
 
-/* Visibility states */
 .popup-overlay.show {
     visibility: visible;
     opacity: 1;
@@ -282,7 +273,6 @@ tr:hover {
     transform: scale(1);
 }
 
-/* Icon base */
 .popup-icon {
     width: 60px;
     height: 60px;
@@ -296,12 +286,10 @@ tr:hover {
     margin: 0 auto 15px auto;
 }
 
-/* Error icon */
 .popup-icon.error {
     background: #e74a3b;
 }
 
-/* Modal action */
 .popup-btn {
     background: #4e73df;
     color: white;
