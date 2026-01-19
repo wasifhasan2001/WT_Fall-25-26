@@ -6,13 +6,11 @@ require_once('../db/gameModel.php');
 $id = (int)($_GET['id'] ?? 0);
 $game = getGameById($id);
 
-// PHP Validation: If game doesn't exist, kick them out
 if (!$game) {
     header("Location: admin_dashboard.php?msg=" . urlencode("Game not found"));
     exit();
 }
 
-// Image Path Setup
 $imgFile = $game['image_filename'];
 $hasImage = !empty($imgFile) && file_exists(__DIR__ . "/../images/uploaded/" . $imgFile);
 $displayImg = $hasImage ? "../images/uploaded/" . $imgFile : "../images/default_placeholder.png";
