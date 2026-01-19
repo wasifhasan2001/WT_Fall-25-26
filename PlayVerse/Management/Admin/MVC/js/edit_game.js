@@ -13,7 +13,7 @@ imgInput.addEventListener('change', function() {
     }
 });
 
-/* Form validation logic */
+
 const form = document.getElementById('editForm');
 const nameEl = document.getElementById('g_name');
 const catEl = document.getElementById('g_cat');
@@ -24,11 +24,11 @@ const stockEl = document.getElementById('g_stock');
 form.addEventListener('submit', function(e) {
     let isValid = true;
 
-    /* Reset error states */
+
     document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.form-control').forEach(el => el.style.border = '1px solid #ddd');
 
-    /* Display validation error */
+ 
     function showError(input, msgId) {
         document.getElementById(msgId).style.display = 'block';
         input.style.border = '1px solid #e74a3b';
@@ -38,7 +38,7 @@ form.addEventListener('submit', function(e) {
     if (nameEl.value.trim() === "") showError(nameEl, 'err_name');
     if (catEl.value.trim() === "") showError(catEl, 'err_cat');
     
-    /* Validate numeric inputs */
+
     if (sellEl.value < 0) {
         alert("Sell price cannot be negative");
         isValid = false;
