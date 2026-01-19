@@ -9,7 +9,7 @@ const errEmail = document.getElementById("errEmail");
 const errPassword = document.getElementById("errPassword");
 const errConfirm = document.getElementById("errConfirm");
 
-/* Reset error states */
+
 function clearErrors() {
     errUsername.innerText = "";
     errEmail.innerText = "";
@@ -29,19 +29,19 @@ function clearErrors() {
     resultMsg.innerText = "";
 }
 
-/* Show validation error */
+
 function showError(el, errEl, msg) {
     errEl.innerText = msg;
     errEl.style.display = "block";
     el.classList.add("input-error");
 }
 
-/* Email regex check */
+
 function isValidEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-/* Username regex check */
+
 function isValidUsername(u) {
     return /^[a-zA-Z0-9_]{3,20}$/.test(u);
 }
