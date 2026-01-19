@@ -12,7 +12,7 @@ body {
     align-items: center;
 }
 
-/* Wrapper styles */
+
 .auth-container {
     width: 380px;
     background: #111;
@@ -22,7 +22,7 @@ body {
     text-align: center;
 }
 
-/* Branding styles */
+
 .logo {
     font-size: 26px;
     font-weight: bold;
@@ -39,7 +39,7 @@ h2 {
     color: white;
 }
 
-/* Field styles */
+
 input {
     width: 100%;
     padding: 10px;
@@ -50,7 +50,7 @@ input {
     font-size: 14px;
 }
 
-/* Action button */
+
 button {
     width: 100%;
     padding: 10px;
@@ -68,7 +68,7 @@ button:hover {
     background: #009acd;
 }
 
-/* Navigation links */
+
 .bottom-link {
     margin-top: 15px;
     font-size: 14px;
@@ -84,7 +84,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Validation message */
+
 .err {
     display: none;
     text-align: left;
