@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 20px 100px;
+   display: flex;
+   align-items: center;
+   z-index: 99;
+   backdrop-filter: blur(20px);
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: auto;
+
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.user-auth {
+    margin-left: 40px;
+}
+
+.user-auth .login-btn-modal {
+    height: 40px;
+    padding: 0 35px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.user-auth .login-btn-modal:hover {
+    background: #fff;
+    color: #222;
+}
+
+section {
+     min-height: 100vh;
+    width: 100%;
+    /* Fixed ensures the image covers the screen even when scrolling */
+    background: url('../IMAGE/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 100px; /* Space for the fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h1 {
+    position: relative; 
+    padding: 0 100px; /* This 100px padding matches your logo's position */
+   /* display: block;   /* Changed from flex to prevent centering the name */
+    text-align: left;
+    color: #fff;
+}
+
+
+.auth-modal {
+    position: fixed;
+    width: 420px;
+    height: 440px;
+    background: rgba(0, 0, 0, .3);
+    border: 2px solid rgba(255, 255, 255, .3);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+    backdrop-filter: blur(20px);
+    color: #888;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: height .2s ease, transform .5s ease;
+ }
+
+.auth-modal.show{
+    transform: scale(1);
+}
+
+.auth-modal.slide{
+    height: 520px
+}
+
+.auth-modal .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.auth-modal .form-box.login,
+.auth-modal.slide .form-box.register{
+    transform: translateX(0);
+    transition: transform .18s ease;
+}
+
+.auth-modal.slide .form-box.login{
+    transform: translateX(-400px);
+    transition: none;
+}
+
+.auth-modal .form-box.register{
+    position: absolute;
+    transform: translateX(400px);
+}
+
+.form-box h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .3);
+    outline: none;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: #222;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.form-box p{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.form-box p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-box p a:hover {
+    text-decoration: underline;
+}
+
+.auth-modal .close-btn-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: none;
+    border-bottom-left-radius: 20px;
+    font-size: 35px;
+    color: #222;
+    cursor: pointer;
+    z-index: 1;
+}
+
+ .profile-box .avatar-circle { 
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 25px;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    }
+
+    .profile-box .dropdown {
+        position: absolute;
+        top: 85px;
+        right: 100px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: .5s;
+    }
+
+    .profile-box.show .dropdown{
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .profile-box .dropdown a{
+        padding: 6px 12px;
+        border-radius: 4px;
+        color: #222;
+        text-decoration: none;
+        font-weight: 500;
+        margin: 2px 0;
+        transition: .2s;
+    }
+
+    .profile-box .dropdown a:hover{
+        background: #eee;
+    }
+
+    .alert-box{
+        position: fixed;
+        inset: 0;
+        top: 35px;
+        margin: 0 auto;
+        width: 350px;
+        height: 70px;
+        background: #fff;
+        border-radius: 6px;
+        padding: 0 15px;
+        z-index: 100;
+        overflow: hidden;
+        transform: translateY(calc(-100% - 35px));
+        transition: .5s ease;
+    }
+
+    .alert-box.show{
+        transform: translateY(0);
+    }
+
+    .alert {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: #222;
+        font-weight: 500;
+    } 
+
+    .alert::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: #0abf30;
+        animation: progress 6s linear forwards;
+    }
+
+    @keyframes progress{
+        100%{
+            width: 0;
+        }
+    }
+
+    .alert.error::after{
+        background: #f00;
+    }
+
+    .alert i{
+        font-size: 35px;
+        color: #0abf30;
+        margin-right: 8px;
+    }
+
+    .alert.error i{
+        color: #f00;
+    }
+
+
+
+.section-title {
+    font-size: 28px;
+    padding-top: 100px;
+    color: #eee;
+    
+}
+
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 200px;
+}
+
+.game-card {
+    background: #242424;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.game-card h3 {
+    margin: 10px 0 5px;
+    color:#eee
+}
+
+.game-card p {
+    font-size: 14px;
+    opacity: 0.8;
+    color:#eee
+}
+
+.play-btn {
+    margin-top: 10px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: seagreen;
+    color: white;
+    cursor: pointer;
+}
+/* Update your section to handle the background correctly */
+.game-page-section {
+    min-height: 100vh;
+    width: 100%;
+    background: url('../IMAGE/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed; /* Keeps city background consistent */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the Title and the Grid itself */
+    padding: 100px 50px;
+}
+
+/* This fixes the vertical stacking/horizontal squishing */
+.game-grid {
+    display: grid;
+    /* This creates as many columns as fit, at least 250px wide each */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Prevents games from spreading too far on wide screens */
+    margin-top: 40px;
+}
+
+/* Ensure cards don't lose their styling */
+.game-card {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent like your profile */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* --- NEW ACCOUNT DASHBOARD STYLES --- */
+
+.account-body {
+  /* 'fixed' is the key keyword here */
+    background: url('../IMAGE/background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    /* This ensures that even on mobile devices, the background doesn't jump */
+    background-attachment: fixed;
+}
+
+
+
+.dashboard-wrapper {
+   display: flex;
+    max-width: 1200px;
+    margin: 120px auto 50px;
+    gap: 30px;
+    padding: 0 20px;
+    /* Ensures the page grows with your content */
+    align-items: flex-start;
+}
+
+/* Sidebar: Personal Info & Address */
+.profile-sidebar {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-large {
+    width: 80px;
+    height: 80px;
+    background: #0abf30;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.info-group {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.info-group h3 {
+    color: #0abf30;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Main Content: Achievements & Games */
+.dashboard-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-section {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.achievement-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.achievement-list li {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-item {
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.game-item img {
+    width: 150px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* Search Bar Styling */
+.search-wrapper {
+   width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.search-box {
+    display: flex; /* This aligns input and button horizontally */
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 15px; /* Internal spacing */
+}
+
+.search-box input {
+    flex: 1; /* Makes the input field grow to fill the left side */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-box button {
+    background: #0abf30; /* Matches your green theme */
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: #08a129;
+    transform: scale(1.1);
+}
+
+/* Glassmorphism for the Browse Section */
+.browse-container {
+    width: 80%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.game-categories {
+   display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px; /* Reduced from 200px to keep it closer to the title but with a clean gap */
+}
+
+
+/* About Page Specific Styles */
+.about-page {
+    padding: 0 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-text {
+    position: relative;
+    margin-top: 120px; /* Positioned below the logo */
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.about-glass-container {
+    background: rgba(0, 0, 0, 0.5); /* Matching sidebar transparency */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px; /* Curved borders as requested */
+    padding: 50px;
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+.about-content h2 {
+    color: #0abf30; /* Your signature green */
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: #eee;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 20px; /* Matching your curved picture style */
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 40px;
+    color: #0abf30;
+    margin-bottom: 10px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.stat-box h3 {
+    font-size: 30px;
+    color: #fff;
+}
+
+.stat-box p {
+    color: #0abf30;
+    font-weight: 600;
+}
