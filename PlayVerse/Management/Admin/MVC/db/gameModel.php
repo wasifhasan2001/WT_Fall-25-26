@@ -1,14 +1,12 @@
 <?php
 require_once(__DIR__ . '/../../../shared/db.php');
 
-/* Fetch all records */
 function getAllGames() {
     global $conn;
     $sql = "SELECT * FROM games ORDER BY id DESC";
     return mysqli_query($conn, $sql);
 }
 
-/* Fetch by ID */
 function getGameById($id) {
     global $conn;
     $stmt = mysqli_prepare($conn, "SELECT * FROM games WHERE id = ? LIMIT 1");
@@ -18,7 +16,6 @@ function getGameById($id) {
     return mysqli_fetch_assoc($result);
 }
 
-/* Create new record */
 function addGame($data, $imageName) {
     global $conn;
     $sql = "INSERT INTO games (name, category, sell_price, rent_price_per_month, stock_qty, status, image_filename) 
@@ -37,7 +34,6 @@ function addGame($data, $imageName) {
     return mysqli_stmt_execute($stmt);
 }
 
-/* Update existing record */
 function updateGame($id, $data, $imageName = null) {
     global $conn;
     
@@ -72,7 +68,6 @@ function updateGame($id, $data, $imageName = null) {
     return mysqli_stmt_execute($stmt);
 }
 
-/* Remove record */
 function deleteGame($id) {
     global $conn;
     $stmt = mysqli_prepare($conn, "DELETE FROM games WHERE id = ?");
