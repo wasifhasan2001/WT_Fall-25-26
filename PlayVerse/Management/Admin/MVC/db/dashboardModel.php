@@ -1,11 +1,9 @@
 <?php
 require_once(__DIR__ . '/../../../shared/db.php');
 
-/* Get administrative statistics */
 function getAdminStats(){
     global $conn;
 
-    /* Initialize statistics array */
     $stats = [
         "total_games" => 0,
         "total_stock" => 0,
@@ -17,7 +15,6 @@ function getAdminStats(){
         "month_rent_earning" => 0.0
     ];
 
-    /* Fetch inventory metrics */
     $q1 = "SELECT
             COUNT(*) AS total_games,
             COALESCE(SUM(stock_qty),0) AS total_stock,
@@ -34,7 +31,6 @@ function getAdminStats(){
         $stats["out_stock_games"] = (int)$row["out_stock_games"];
     }
 
-    /* Fetch transaction metrics */
     $q2 = "SELECT
             SUM(CASE WHEN payment_type='buy' THEN 1 ELSE 0 END) AS month_sold,
             SUM(CASE WHEN payment_type='rent' THEN 1 ELSE 0 END) AS month_rented,
